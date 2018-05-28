@@ -17,6 +17,8 @@ After you see the webpack compilation succeed (the `npm run webpack` step), open
 
 run: `aws appsync get-introspection-schema --api-id pdtqkhbx3nawtfg5lody6w6jcu --format JSON graphql_schema.json`
 
+yarn send-introspection-query https://h25cvu6lonfilcrryg7xo5fjne.appsync-api.eu-west-1.amazonaws.com/graphql --headers 'Authorization: bearer da2-2ajoq2qmsvgspdw6hljfdj2lb4'
+
 ## decoding
 
 error:

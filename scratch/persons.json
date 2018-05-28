@@ -1,0 +1,27 @@
+{
+  "data": {
+    "listPeople": {
+      "items": [
+        {
+          "age": 23,
+          "id": "123",
+          "name": "BobTest",
+          "__typename": "Person"
+        },
+        {
+          "age": 24,
+          "id": "124",
+          "name": "JoeTest",
+          "__typename": "Person"
+        },
+        {
+          "age": 25,
+          "id": "125",
+          "name": "JimTest",
+          "__typename": "Person"
+        }
+      ],
+      "__typename": "PersonConnection"
+    }
+  }
+}
