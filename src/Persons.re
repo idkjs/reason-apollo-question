@@ -66,8 +66,8 @@ let make = _children => {
                  | Data(response) =>
                    Js.log(response##listPeople);
                    let listPeople = response##listPeople;
-                   let parsedItems = parseItems(listPeople);
-                   Js.log(parsedItems);
+                   /* let parsedItems = parseItems(listPeople);
+                      Js.log(parsedItems); */
                    <div> <h1> (ReasonReact.string("TEST")) </h1> </div>;
                  }
                )

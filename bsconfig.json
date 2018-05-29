@@ -3,10 +3,7 @@
   "reason": {
     "react-jsx": 2
   },
-  "sources": [
-    "src",
-    "lib"
-  ],
+  "sources": ["src", "lib"],
   "package-specs": [
     {
       "module": "commonjs",
@@ -21,11 +18,7 @@
     "reason-react",
     "@glennsl/bs-json"
   ],
-  "bsc-flags": [
-    "-bs-super-errors"
-  ],
+  "bsc-flags": ["-bs-super-errors"],
   "refmt": 3,
-  "ppx-flags": [
-    "graphql_ppx/ppx"
-  ]
+  "ppx-flags": ["graphql_ppx/ppx"]
 }
