@@ -7,7 +7,6 @@ var Js_json = require("bs-platform/lib/js/js_json.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var ReasonApollo = require("reason-apollo/src/ReasonApollo.bs.js");
 var Caml_exceptions = require("bs-platform/lib/js/caml_exceptions.js");
-var Caml_builtin_exceptions = require("bs-platform/lib/js/caml_builtin_exceptions.js");
 
 function ste(prim) {
   return prim;
@@ -150,45 +149,10 @@ function parseItems(listPeople) {
       return items[0].map((function (item) {
                     if (item) {
                       var item$1 = item[0];
-                      var name = item$1.name;
-                      var id = item$1.id;
-                      var age = item$1.age;
-                      var exit = 0;
-                      if (name) {
-                        var name$1 = name[0];
-                        if (id) {
-                          if (age) {
-                            return id[0] + (" - " + (name$1 + (" -- " + String(age[0]))));
-                          } else {
-                            exit = 1;
-                          }
-                        } else if (age) {
-                          exit = 1;
-                        } else {
-                          return name$1;
-                        }
-                      } else if (id) {
-                        if (age) {
-                          exit = 1;
-                        } else {
-                          return id[0];
-                        }
-                      } else if (age) {
-                        return String(age[0]);
-                      } else {
-                        return "Error retrieving item";
-                      }
-                      if (exit === 1) {
-                        throw [
-                              Caml_builtin_exceptions.match_failure,
-                              [
-                                "Persons.re",
-                                34,
-                                14
-                              ]
-                            ];
-                      }
-                      
+                      var name = /* Some */[item$1.name];
+                      var id = /* Some */[item$1.id];
+                      var age = /* Some */[item$1.age];
+                      return id[0] + (" - " + (name[0] + (" -- " + String(age[0]))));
                     } else {
                       return "Error retrieving item";
                     }
@@ -231,7 +195,9 @@ function make$1() {
                                   } else if (result.tag) {
                                     var response = result[0];
                                     console.log(response.listPeople);
-                                    response.listPeople;
+                                    var listPeople = response.listPeople;
+                                    var parsedItems = parseItems(listPeople);
+                                    console.log(parsedItems);
                                     tmp = React.createElement("div", undefined, React.createElement("h1", undefined, "TEST"));
                                   } else {
                                     console.log(result[0]);

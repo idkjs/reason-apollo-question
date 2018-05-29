@@ -28,9 +28,9 @@ let parseItems = listPeople =>
           item =>
             switch (item) {
             | Some(item) =>
-              let name = item##name;
-              let id = item##id;
-              let age = item##age;
+              let name = Some(item##name);
+              let id = Some(item##id);
+              let age = Some(item##age);
               switch (name, id, age) {
               | (Some(name), Some(id), Some(age)) =>
                 id ++ " - " ++ name ++ " -- " ++ string_of_int(age)
@@ -66,11 +66,11 @@ let make = _children => {
                  | Data(response) =>
                    Js.log(response##listPeople);
                    let listPeople = response##listPeople;
-                   let items = response##listPeople##items;
-                   Js.log(items);
+                   /* let items = response##listPeople##items;
+                      Js.log(items); */
 
-                   /* let parsedItems = parseItems(listPeople);
-                      Js.log(parsedItems); */
+                   let parsedItems = parseItems(listPeople);
+                   Js.log(parsedItems);
                    <div> <h1> (ReasonReact.string("TEST")) </h1> </div>;
                  }
                )
